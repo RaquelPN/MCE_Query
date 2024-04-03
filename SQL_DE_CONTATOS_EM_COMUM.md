@@ -7,4 +7,5 @@ SELECT b.Person_id
 
     FROM [20240403_EMAIL_NATVC_MOÇA_340G] b
     WHERE b.person_id = a.person_id
+
     ``` 
