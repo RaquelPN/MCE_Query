@@ -1,3 +1,4 @@
+```MYSQL
 SELECT DISTINCT a.email_value,
                 a.zipcode,
                 a.numero_endereco,
@@ -20,3 +21,4 @@ WHERE  ( o.eventdate >= Getdate() - 90 )
        AND NOT EXISTS (SELECT 1 FROM tb00_Tabela_2 b  WHERE  a.person_id = b.person_id)
          AND NOT EXISTS (SELECT 1 FROM tb00_Tabela_3 c WHERE  a.person_id = c.person_id)
            AND NOT EXISTS (SELECT 1 FROM tb00_Tabela_4 d WHERE a.person_id = d.person_id) 
+           ```
