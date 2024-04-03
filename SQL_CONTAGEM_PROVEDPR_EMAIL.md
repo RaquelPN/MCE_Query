@@ -1,0 +1,19 @@
+```MySQL
+/*Query contagem provedor*/
+select top 99999999 provedore,count(provedore) as total
+from (
+		select 
+		case when 
+		c.EMAIL_VALUE like '%live.com.br' or c.EMAIL_VALUE like '%msn.com.br' 
+		or c.EMAIL_VALUE like '%hotmail.com.br' or c.EMAIL_VALUE like '%outlook.com.br' 
+		or c.EMAIL_VALUE like '%live.com' or c.EMAIL_VALUE like '%msn.com' 
+		or c.EMAIL_VALUE like '%hotmail.com' or c.EMAIL_VALUE like '%outlook.com' then 'hotmail.com'
+		when EMAIL_VALUE like '%yahoo.com' or EMAIL_VALUE like '%yahoo.com.br' then 'yahoo.com'		
+		else substring(c.EMAIL_VALUE, charindex('@',c.EMAIL_VALUE)+1,9999) 
+		end provedore, count(distinct c.EMAIL_VALUE) as total
+		from tb_engajados c
+		group by EMAIL_VALUE
+) t  
+group by provedore
+order by 2 desc
+```
