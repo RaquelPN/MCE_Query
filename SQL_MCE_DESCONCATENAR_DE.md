@@ -1,6 +1,5 @@
 ```MySQL
 
-
 SELECT 
 person_id,
 EMAIL_VALUE,
@@ -33,8 +32,6 @@ Pergunta_08,
 Pergunta_09,
 Pergunta_10
 FROM Tb_Respostas_Formulario_Pesquisa_Antigos_Contatos_concat
-apps-fileview.texmex_20240404.01_p0
-Query para desconcatenar.txt
-Exibindo Query para desconcatenar.txt… 
+
 
 ```
