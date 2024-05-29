@@ -1,4 +1,18 @@
-
+Select 
+o.Subscriberkey,
+s.EmailAddress
+From _sent as o 
+Inner Join ent._Subscribers as s ON s.Subscriberkey = o.Subscriberkey
+Where o.Jobid in  ('435881','433777')
+and not exists (select op.Subscriberkey  
+                  From  _open op 
+                  Where o.Subscriberkey = op.Subscriberkey and op.Jobid not in  ('435881','433777'))
+and not exists (select b.PERSON_ID  
+                  From [tb00_20240509_nav_mn_ofertas_abril_maio_ofertas_disparo23_05_disparo] b 
+                  Where s.Subscriberkey = b.PERSON_ID)
+        and not exists (select c.PERSON_ID  
+                  From [20240528_EMAIL_NHS_MAIODEOFERTAS_ACVMHS_V3_OPTIN] c 
+                  Where s.Subscriberkey = c.PERSON_ID)
 
 
 Select
